@@ -26,6 +26,7 @@ html,body{
   margin: 1rem;
 }
 .homeContent{
+  display: flex;
   text-align: center;
   margin: 4rem auto;
 }
@@ -56,4 +57,21 @@ html,body{
 .aboutUs{
     margin: 2rem auto;
     width: 70%;
+}
+.homeButtons{
+  border: 1px solid transparent;
+  border-radius: 2rem;
+}
+.homeButtons > button{
+  margin: .7rem;
+}
+.leftContent{
+  /* flex-grow: 1; */
+  display: flex;
+  flex-direction: column;
+}
+.rightContent{
+  display: flex;
+  flex-direction: column;
+  /* flex-grow: 1; */
 }
