@@ -93,7 +93,7 @@ export default function Questions(){
             </div>
              )
         })
-        return {render};
+        return <>{render}</>;
     }
 
     return <> {     

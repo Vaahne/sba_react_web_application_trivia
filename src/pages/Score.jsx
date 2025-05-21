@@ -30,11 +30,11 @@ export default function Score(){
                         </tr>
                     })}
                 </tbody>
-                <footer>
-                    <tr>
-                        Score : {score}
+                <tfoot>
+                    <tr aria-colspan={3} style={{textAlign:'right'}}>
+                       <b> Total score Earned : {score} </b>
                     </tr>
-                </footer>
+                </tfoot>
             </table>
         </div>
     }
