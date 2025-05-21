@@ -93,14 +93,15 @@ export default function Questions(){
             </div>
              )
         })
-        return <div className="questionsDiv">{render}</div>;
+        return {render};
     }
 
     return <> {     
         loading ? (<h1>Loading ...</h1>): 
-        <>  
+        <>  <div className="questionsDiv">
             {renderContent()}
              <button className="questionsSubmit"  onClick={handleClick}>Submit</button>
+             </div>
          </>
          
     }</>
