@@ -1,14 +1,23 @@
 export default function AboutUs(){
     return <div className="aboutUs">
         <div >
-            Welcome to TriviaVerse, your go-to destination for fun, fast-paced, and brain-boosting quizzes!
+            <h1>Welcome to the Trivia App!</h1>
 
-            We created this trivia application to make learning enjoyable and screen time meaningful. Whether you're testing your knowledge, competing with friends, or just curious about new topics, TriviaVerse offers a wide range of questions across categories like science, history, movies, sports, and more.
+            Trivia App is a fun and interactive quiz platform designed to challenge your knowledge across a variety of categories. Whether you're into science, history, pop culture, or just want to test your general knowledge, this app offers something for everyone.
+
         </div>
-        <ul>Our Mission is to:
-            <li><b>Educate through play</b> – turning facts into fun challenges</li>
-            <li><b>Encourage curiosity</b> – explore new topics every day.</li>
-            <li><b>Foster friendly competition</b> - track scores and challenge yourself or others.</li>
+        <ul>Why We Built This
+            <li>Choose a trivia category or start with a random quiz</li>
+            <li>Answer a series of multiple-choice questions</li>
+            <li><ul>At the end of the quiz, view your results in a scoreboard table
+                    <li>Correct answers are shown in green</li>
+                    <li>Your total score is displayed clearly</li>
+                </ul>
+            </li>
         </ul>
+        <div>
+            <h1>Powered By Open Trivia DB</h1>
+            All questions are fetched from the <a href="https://opentdb.com/">Open Trivia Database</a> , a free and open-source trivia question API covering a wide range of topics and difficulty levels.
+        </div>
     </div>
 }
