@@ -31,4 +31,4 @@ This app fetches quiz questions in real-time from the Open Trivia Database API:
 - React Modal
 - css modules
 - Open Trivia DB API
-- useState, useContext, useEffect
+- useState, useContext, useEffect , useNavigate , useLocation

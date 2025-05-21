@@ -2,7 +2,7 @@ import { Routes,Route } from 'react-router-dom';
 import Modal from 'react-modal';
 import './App.css';
 import PageNotFound from './pages/PageNotFound';
-import HomePage from './pages/HomePage';
+import HomePage from './pages/HomePage/HomePage';
 import NavBar from './components/NavBar/NavBar';
 import { useEffect,useState } from 'react';
 import Quiz from './components/Quiz/Quiz';

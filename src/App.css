@@ -20,16 +20,6 @@ html,body{
   box-shadow: 1 2 3 rgba(200,11,211,0.2);
 }
 
-.homeContent > button{
-  padding: 1rem;
-  background-color:blueviolet;
-  margin: 1rem;
-}
-.homeContent{
-  display: flex;
-  text-align: center;
-  margin: 4rem auto;
-}
 .scoreCard{
   text-align: center;
 }
@@ -38,7 +28,7 @@ html,body{
 }
 .content{
   flex-grow: 1;
-  background-color: darkcyan;
+  background: linear-gradient(to bottom, #a591a2, #491226);
 }
 .question{
   font-size: medium;
@@ -58,20 +48,4 @@ html,body{
     margin: 2rem auto;
     width: 70%;
 }
-.homeButtons{
-  border: 1px solid transparent;
-  border-radius: 2rem;
-}
-.homeButtons > button{
-  margin: .7rem;
-}
-.leftContent{
-  /* flex-grow: 1; */
-  display: flex;
-  flex-direction: column;
-}
-.rightContent{
-  display: flex;
-  flex-direction: column;
-  /* flex-grow: 1; */
-}
+

@@ -1,0 +1,34 @@
+
+.homeContent{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 2rem;
+  text-align: center;
+  margin: 4rem auto;
+}
+.homeContent > *{
+  margin: 1rem auto; 
+}
+.sideContent{
+  display: grid;
+  grid-template-columns: repeat(1,1fr);
+  gap: 1rem;
+  width: 20%;
+}
+
+.homeButtons{
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  border: 1px solid transparent;
+  border-radius: 2rem;
+}
+.homeButtons > button{
+  margin: .7rem;
+  width: 100%;
+  background-color:rgb(93, 63, 120);
+}
+.sideContent >*{
+  width: 15rem;
+  height: 10rem;
+}

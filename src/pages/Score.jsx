@@ -1,16 +1,31 @@
 import { useParams,useLocation } from "react-router-dom"
+import {useState,useEffect}  from 'react';
 
 export default function Score(){
-    console.log('welcome');
+
+    const[color,setColor] = useState('pink');
+    
     const location = useLocation();
     const {score} = useParams();
-
     const {scoreBoard} = location.state || [] ;
 
+
+    useEffect(()=>{
+        let colorList = ['red','green','gold','glitter','silver','blue'];
+        let index = 0
+        
+        const id= setInterval(() => {
+            index++;
+            setColor(colorList[index%colorList.length]);
+        }, 500);
+
+        return () => clearInterval(id);
+    },[]);
+
      function scoreBoardDisplay(){
-        console.log('hi');
+        
         return <div>
-            <table className="scoreTable" border="1">
+            <table className="scoreTable" border="1" style={{border:`.3rem solid  ${color}`}}>
                 <thead>
                     <tr>
                         <th>Question</th>
@@ -31,12 +46,15 @@ export default function Score(){
                     })}
                 </tbody>
                 <tfoot>
-                    <tr aria-colspan={3} style={{textAlign:'right'}}>
-                       <b> Total score Earned : {score} </b>
+                    <tr >
+                        <td colSpan='3' style={{textAlign:'center'}}>
+                            <b> Total score Earned : {score} </b>
+                       </td>
                     </tr>
                 </tfoot>
             </table>
         </div>
+       
     }
 
 
