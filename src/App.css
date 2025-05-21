@@ -1,6 +1,13 @@
+html,body{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 #root {
   margin: 0 auto;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .categoryContent{
@@ -30,7 +37,8 @@
   margin: 2rem 7rem;
 }
 .content{
-  background: linear-gradient();
+  flex-grow: 1;
+  background-color: darkcyan;
 }
 .question{
   font-size: medium;
@@ -44,4 +52,8 @@
     font-family: cursive;
     margin: 2rem auto;
     text-align: left;
+}
+.aboutUs{
+    margin: 2rem auto;
+    width: 70%;
 }

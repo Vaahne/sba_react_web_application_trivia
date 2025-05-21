@@ -4,11 +4,9 @@ import categoryContext from "../context/categoryContext";
 
 export default function Questions(){
     let scoreBoard = [];
-    let score = 0;
     const[userAnswers,setUserAnswers] = useState(null);
     const[loading,setLoading] = useState(true);
     const[questions,setQuestions] = useState(null);
-    const[showScoreBoard,setShowScoreBoard] = useState(false);
     
     const nav = useNavigate();
     const {cat} = useParams();
@@ -53,6 +51,7 @@ export default function Questions(){
     }
 
     function handleClick(){
+        let score = 0;
         if(userAnswers){
             questions.forEach((q,i)=>{
                 if(!userAnswers[i]) userAnswers[i] = '';
@@ -102,7 +101,6 @@ export default function Questions(){
         <>  
             {renderContent()}
              <button className="questionsSubmit"  onClick={handleClick}>Submit</button>
-            {/* {showScoreBoard && scoreBoardDisplay()}  */}
          </>
          
     }</>
