@@ -1,6 +1,7 @@
 import {  useContext, useEffect, useState } from "react"
 import { useParams,useNavigate } from "react-router-dom";
 import categoryContext from "../context/categoryContext";
+import loading from '../assets/images/loading.jpg'
 
 export default function Questions(){
     let scoreBoard = [];
@@ -97,7 +98,7 @@ export default function Questions(){
     }
 
     return <> {     
-        loading ? (<h1>Loading ...</h1>): 
+        loading ? (<h1><img src={loading} /></h1>): 
         <>  <div className="questionsDiv">
             {renderContent()}
              <button className="questionsSubmit"  onClick={handleClick}>Submit</button>
