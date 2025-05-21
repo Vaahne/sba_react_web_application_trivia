@@ -1,0 +1,47 @@
+#root {
+  margin: 0 auto;
+  height: 100vh;
+}
+
+.categoryContent{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+}
+
+.scoreCard{
+  border: 1px solid transparent;
+  box-shadow: 1 2 3 rgba(200,11,211,0.2);
+}
+
+.homeContent > button{
+  padding: 1rem;
+  background-color:blueviolet;
+  margin: 1rem;
+}
+.homeContent{
+  text-align: center;
+  margin: 4rem auto;
+}
+.scoreCard{
+  text-align: center;
+}
+.questionsDiv{
+  /* background-color: rgb(222, 217, 217); */
+  margin: 2rem 7rem;
+}
+.content{
+  background: linear-gradient();
+}
+.question{
+  font-size: medium;
+  font-weight: bolder;
+}
+.questionsSubmit{
+  margin: 0 auto;
+}
+
+.scoreTable {
+    font-family: cursive;
+    margin: 2rem auto;
+    text-align: left;
+}

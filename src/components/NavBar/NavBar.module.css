@@ -1,0 +1,12 @@
+.navBar{
+    width: 100vw;
+    height: 4rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+.navBar > ul{
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    padding: .3rem;
+    margin: 1rem;
+}
