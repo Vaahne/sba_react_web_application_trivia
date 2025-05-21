@@ -98,7 +98,7 @@ export default function Questions(){
     }
 
     return <> {     
-        loading ? (<h1><img src={loading} /></h1>): 
+        loading ? (<h1><img src="https://c.tenor.com/0iK9a1WkT40AAAAM/loading-white.gif" /></h1>): 
         <>  <div className="questionsDiv">
             {renderContent()}
              <button className="questionsSubmit"  onClick={handleClick}>Submit</button>
