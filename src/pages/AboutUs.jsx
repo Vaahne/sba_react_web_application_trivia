@@ -16,8 +16,8 @@ export default function AboutUs(){
             </li>
         </ul>
         <div>
-            <h1>Powered By Open Trivia DB</h1>
-            All questions are fetched from the <a href="https://opentdb.com/">Open Trivia Database</a> , a free and open-source trivia question API covering a wide range of topics and difficulty levels.
+            <h2>Powered By Open Trivia DB</h2>
+            All questions are fetched from the <a href="https://opentdb.com/" target="_blank">Open Trivia Database</a> , a free and open-source trivia question API covering a wide range of topics and difficulty levels.
         </div>
     </div>
 }
