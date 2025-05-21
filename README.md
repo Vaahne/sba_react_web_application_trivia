@@ -11,7 +11,7 @@ A fun and interactive quiz application built with React where users can test the
 1. Home Page
 + random Quiz
 + start quiz
-2.Start Confirmation
+2. Start Confirmation
 + If a category is selected, a React modal appears asking for confirmation before starting
 3. Quiz Page
 + Multiple-choice questions are displayed 
@@ -20,9 +20,14 @@ A fun and interactive quiz application built with React where users can test the
 + After the final question, results are displayed in a table
 + Correct answers are shown in green
 + Final score is displayed at the bottom
-## Libraries used
+## Trivia Data Powered by Open Trivia DB (https://opentdb.com/)
+This app fetches quiz questions in real-time from the Open Trivia Database API:
++ Wide range of categories (e.g., General Knowledge, Science, History)
++ Multiple Choice Questions
+## Tech Stack
 - React
 - React Router Dom
 - React Modal
 - css modules
+- Open Trivia DB API
 - useState, useContext, useEffect
