@@ -34,9 +34,9 @@ function App() {
   return (
     <>
       <NavBar/>
-      <div className='content'> 
-      <categoryContext.Provider value={categories}>
-        <Routes>
+      <div className='content'>   
+       <categoryContext.Provider value={categories}>  {/*// setting the categories as value to the context */}
+        <Routes>  {/* all routes fot navigation using react-router-dom */}
           <Route path="/" element={<HomePage  />}/>
           <Route path="/category" element={<Category/>}/>
           <Route path="/questions/:cat" element={<Questions/>} />
@@ -49,5 +49,4 @@ function App() {
     </>
   )
 }
-
 export default App

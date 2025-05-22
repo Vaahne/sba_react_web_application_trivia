@@ -1,4 +1,5 @@
 export default function AboutUs(){
+    // simple details about the application
     return <div className="aboutUs">
         <div >
             <h1>Welcome to the Trivia App!</h1>

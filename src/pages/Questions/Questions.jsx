@@ -12,7 +12,7 @@ export default function Questions(){
 
     const nav = useNavigate();
     const {cat} = useParams();
-
+    //  fetches all the questions based on the category on load
     useEffect(()=>{
         // gets the questions based on the category selected
          function getQuestions(){
@@ -104,7 +104,7 @@ export default function Questions(){
         return <>{render}</>;
     }
     // loading image if the content not loaded yet
-    function loading(){
+    function loadingQuestions(){
         return <h1 style={{textAlign:"center"}}>
             <img src="https://c.tenor.com/0iK9a1WkT40AAAAM/loading-white.gif" />
         </h1>
@@ -124,6 +124,6 @@ export default function Questions(){
                     <button onClick={toScore}>Submit Quiz</button>
                     <button onClick={()=>setIsOpen(false)}>Close</button>
             </Modal>    
-        {   loading ? loading() : loaded() }
+        {   loading ? loadingQuestions() : loaded() }
     </>
 }

@@ -4,13 +4,13 @@ import {useState,useEffect}  from 'react';
 export default function Score(){
 
     const[color,setColor] = useState('pink');
-    
+    // to get the data passed from other component or page via navigate
     const location = useLocation();
-    const {score} = useParams();
-    const {scoreBoard} = location.state || [] ;
+    const {score} = useParams();  // the param :score 
+    const {scoreBoard} = location.state || [] ; // data passed from other component/page with name state
 
-
-    useEffect(()=>{
+    // changes the color of score with some interval
+    useEffect(()=>{ 
         let colorList = ['red','green','gold','glitter','silver','blue'];
         let index = 0
         
@@ -22,8 +22,8 @@ export default function Score(){
         return () => clearInterval(id);
     },[]);
 
-     function scoreBoardDisplay(){
-        
+    // displays all the details about quiz submitted with score
+     function scoreBoardDisplay(){        
         return <div>
             <table className="scoreTable" border="1" >
                 <thead>
@@ -57,8 +57,6 @@ export default function Score(){
        
     }
 
-
-    // console.log('score from score',score)
     return <div className="scoreCard">
         {scoreBoardDisplay()}
     </div>
