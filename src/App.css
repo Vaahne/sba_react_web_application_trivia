@@ -2,50 +2,49 @@ html,body{
   height: 100%;
   margin: 0;
   padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 #root {
-  margin: 0 auto;
+  width: 100vw;
+  /* margin: 0 auto; */
   height: 100vh;
   display: flex;
   flex-direction: column;
-}
-
-.categoryContent{
-  display: grid;
-  grid-template-columns: repeat(4,1fr);
-}
-
-.scoreCard{
-  border: 1px solid transparent;
-  box-shadow: 1 2 3 rgba(200,11,211,0.2);
-}
-
-.scoreCard{
-  text-align: center;
-}
-.questionsDiv{
-  margin: 2rem 7rem;
 }
 .content{
   flex-grow: 1;
   background: linear-gradient(to bottom, #a591a2, #491226);
 }
-.question{
-  font-size: medium;
-  font-weight: bolder;
+.categoryContent{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  margin : 4rem auto;
 }
-.questionsSubmit{
-  margin: 1rem 13rem;
-  width: 8rem;
+
+.scoreCard{
+  border: 1px solid transparent;
+  box-shadow: 0 4px 12px rgba(200, 11, 211, 0.2);
+  padding: 2rem;
+  border-radius: 1rem;
+  background-color: #fff;
+  color: #222;
+  text-align: center;
+  max-width: 800px;
+  margin: 2rem auto;
+  /* border: 1px solid transparent;
+  box-shadow: 1 2 3 rgba(200,11,211,0.2); */
 }
 
 .scoreTable {
     font-family: cursive;
+    font-size: large;
     margin: 2rem auto;
     text-align: left;
+    border: 1px solid teal;
 }
 .aboutUs{
+    font-family: cursive;
+    font-size: large;
     margin: 2rem auto;
     width: 70%;
 }
-

@@ -87,17 +87,18 @@ export default function Questions(){
 
     function renderContent(){
         const render = questions.map((q,index)=>{
-            // console.log('options', q.random);            
             return (  
              <div key={index} >
-                <div className="question" >{index+1}.{q.question}</div>
-
+                <div className={styles.question} >{index+1}.{q.question}</div>
+            <ul className={styles.options}>
                 {q.random.map((ans, i) => (
-                    <label key={i}>
-                        <input type="radio" onChange={()=>handleChange(index,ans)} value={ans} name={`question${index}`} />
+                   <li> <label key={i} >
+                        <input type="radio"  onChange={()=>handleChange(index,ans)} value={ans} name={`question${index}`} />
                         {ans}
                     </label>
+                   </li>
                 ))} 
+            </ul>
             </div>
              )
         })
@@ -113,9 +114,9 @@ export default function Questions(){
     
     {     
         loading ? (<h1><img src="https://c.tenor.com/0iK9a1WkT40AAAAM/loading-white.gif" /></h1>): 
-        <>  <div className="questionsDiv">
+        <>  <div className={styles.questionsDiv}>
             {renderContent()}
-             <button className="questionsSubmit"  onClick={handleClick}>Submit</button>
+             <button className={styles.questionsSubmit}  onClick={handleClick}>Submit</button>
              </div>
          </>
          
