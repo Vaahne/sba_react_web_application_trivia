@@ -13,12 +13,13 @@ export default function Card({category}){
     }
 
     return <>
-        <div className={style.card}>
+        
             <Modal className={style.modalStyle} isOpen={isOpen}  onRequestClose={()=>setIsOpen(false)}>
                     <h2>Are you ready to start the quiz?</h2>
                     <button onClick={handleClick}>Start Quiz</button>
                     <button onClick={()=>setIsOpen(false)}>Close</button>
             </Modal>
+        <div className={style.card}>
                 <Link onClick={()=>setIsOpen(true)} >{category.name}</Link>
         </div>
     </>

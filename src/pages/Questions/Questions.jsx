@@ -1,14 +1,16 @@
 import {  useContext, useEffect, useState } from "react"
 import { useParams,useNavigate } from "react-router-dom";
-import categoryContext from "../context/categoryContext";
-import loading from '../assets/images/loading.jpg'
+import categoryContext from "../../context/categoryContext";
+import styles from './Questions.module.css';
+import Modal from 'react-modal';
 
 export default function Questions(){
     let scoreBoard = [];
     const[userAnswers,setUserAnswers] = useState(null);
     const[loading,setLoading] = useState(true);
     const[questions,setQuestions] = useState(null);
-    
+    const[isOpen,setIsOpen] = useState(false);    
+
     const nav = useNavigate();
     const {cat} = useParams();
 
@@ -51,7 +53,12 @@ export default function Questions(){
         );
     }
 
-    function handleClick(){
+    function handleClick(e){
+        setIsOpen(true);
+
+    }
+
+    function toScore(){
         let score = 0;
         if(userAnswers){
             questions.forEach((q,i)=>{
@@ -61,12 +68,12 @@ export default function Questions(){
                 if(userAnswers[i] == q.correct_answer)
                     score += 1;
              });
-            //  setShowScoreBoard(true);
             nav(`/score/${score}`,{
                 state : {scoreBoard} 
             })
         }else    
              alert('Please answer the questions!!');
+
     }
 
    
@@ -97,7 +104,14 @@ export default function Questions(){
         return <>{render}</>;
     }
 
-    return <> {     
+    return <> 
+        <Modal className={styles.modalStyle} isOpen={isOpen}  onRequestClose={()=>setIsOpen(false)}>
+                    <h2>Are you ready to submit ?</h2>
+                    <button onClick={toScore}>Submit Quiz</button>
+                    <button onClick={()=>setIsOpen(false)}>Close</button>
+            </Modal>
+    
+    {     
         loading ? (<h1><img src="https://c.tenor.com/0iK9a1WkT40AAAAM/loading-white.gif" /></h1>): 
         <>  <div className="questionsDiv">
             {renderContent()}

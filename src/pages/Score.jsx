@@ -25,7 +25,7 @@ export default function Score(){
      function scoreBoardDisplay(){
         
         return <div>
-            <table className="scoreTable" border="1" style={{border:`.3rem solid  ${color}`}}>
+            <table className="scoreTable" border="1" >
                 <thead>
                     <tr>
                         <th>Question</th>
@@ -48,7 +48,7 @@ export default function Score(){
                 <tfoot>
                     <tr >
                         <td colSpan='3' style={{textAlign:'center'}}>
-                            <b> Total score Earned : {score} </b>
+                            <b style={{color:`${color}`}}> Total score Earned : {score} </b>
                        </td>
                     </tr>
                 </tfoot>

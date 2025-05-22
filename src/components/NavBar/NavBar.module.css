@@ -11,6 +11,9 @@
     padding: .3rem;
     margin: 1rem;
 }
+.navBar > ul > li {
+    font-size: x-large;
+}
 .logo{
     width: 7rem;
 }
