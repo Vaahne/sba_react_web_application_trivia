@@ -46,6 +46,9 @@ function App() {
         </Routes>    
       </categoryContext.Provider>
       </div>
+        <footer className="footer">
+        <p>© {new Date().getFullYear()} Trivia App. All rights reserved.</p>
+      </footer>
     </>
   )
 }
