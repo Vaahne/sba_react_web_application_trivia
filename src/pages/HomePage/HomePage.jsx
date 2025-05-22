@@ -4,8 +4,8 @@ import styles from './HomePage.module.css';
 export default function HomePage(){
     const nav = useNavigate();
 
+    // navigates to questions page if random quiz is clicked or the category page if start quiz 
     function handleClick(e){
-        
         if(e.target.name == 'random'){
             console.log(e.target.name);
             const random = Math.floor(Math.random() * 24) +9;
@@ -14,6 +14,8 @@ export default function HomePage(){
         }else
             nav(`/category`);
     }
+
+    // displays the landing page with gifs and buttons to start quiz or random quiz
     return <div className={styles.homeContent}>
         <div className={styles.sideContent}>
             <img src="https://media.tenor.com/1dKzIzThtzgAAAAM/trivia-day-happy-trivia-day.gif" />

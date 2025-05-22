@@ -1,6 +1,5 @@
-import {  useContext, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import { useParams,useNavigate } from "react-router-dom";
-import categoryContext from "../../context/categoryContext";
 import styles from './Questions.module.css';
 import Modal from 'react-modal';
 
@@ -14,10 +13,8 @@ export default function Questions(){
     const nav = useNavigate();
     const {cat} = useParams();
 
-    const categories = useContext(categoryContext);
-
     useEffect(()=>{
-
+        // gets the questions based on the category selected
          function getQuestions(){
             if(!cat) return
             setLoading(true);
@@ -45,6 +42,7 @@ export default function Questions(){
         getQuestions();
     },[]);
 
+    // records all use selected answers into userAnswers state based on selection of options
     function handleChange(index,ans){
         setUserAnswers(prev=>({
             ...prev,
@@ -53,11 +51,12 @@ export default function Questions(){
         );
     }
 
+    // opens react modal on click of submit for confirmation
     function handleClick(e){
         setIsOpen(true);
-
     }
-
+    
+    // adds al questions,userSelected options and the correct answers to the scoreBoard and navigates to scoreBoard page
     function toScore(){
         let score = 0;
         if(userAnswers){
@@ -76,7 +75,7 @@ export default function Questions(){
 
     }
 
-   
+//    shuffles all incorrect and correct answers to display in random order
     function shuffleOptions(options){
         for( let position = options.length -1 ; position>0;position--){
             let randomPosition = Math.floor(Math.random() * (position+1));
@@ -84,7 +83,7 @@ export default function Questions(){
         }
         return options;
     }
-
+// renders all the questions with options on to the page
     function renderContent(){
         const render = questions.map((q,index)=>{
             return (  
@@ -104,21 +103,27 @@ export default function Questions(){
         })
         return <>{render}</>;
     }
+    // loading image if the content not loaded yet
+    function loading(){
+        return <h1 style={{textAlign:"center"}}>
+            <img src="https://c.tenor.com/0iK9a1WkT40AAAAM/loading-white.gif" />
+        </h1>
+    }
+    //  renders the questions once loaded
+    function loaded(){
+        return <div className={styles.questionsDiv}>
+                    {renderContent()}
+             <button className={styles.questionsSubmit}  onClick={handleClick}>Submit</button>
+        </div>
+    }
 
     return <> 
+       {/* react modal for confirmation to submit or not */}
         <Modal className={styles.modalStyle} isOpen={isOpen}  onRequestClose={()=>setIsOpen(false)}>
                     <h2>Are you ready to submit ?</h2>
                     <button onClick={toScore}>Submit Quiz</button>
                     <button onClick={()=>setIsOpen(false)}>Close</button>
-            </Modal>
-    
-    {     
-        loading ? (<h1 style={{textAlign:"center"}}><img src="https://c.tenor.com/0iK9a1WkT40AAAAM/loading-white.gif" /></h1>): 
-        <>  <div className={styles.questionsDiv}>
-            {renderContent()}
-             <button className={styles.questionsSubmit}  onClick={handleClick}>Submit</button>
-             </div>
-         </>
-         
-    }</>
+            </Modal>    
+        {   loading ? loading() : loaded() }
+    </>
 }
