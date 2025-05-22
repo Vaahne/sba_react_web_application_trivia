@@ -113,7 +113,7 @@ export default function Questions(){
             </Modal>
     
     {     
-        loading ? (<h1><img src="https://c.tenor.com/0iK9a1WkT40AAAAM/loading-white.gif" /></h1>): 
+        loading ? (<h1 style={{textAlign:"center"}}><img src="https://c.tenor.com/0iK9a1WkT40AAAAM/loading-white.gif" /></h1>): 
         <>  <div className={styles.questionsDiv}>
             {renderContent()}
              <button className={styles.questionsSubmit}  onClick={handleClick}>Submit</button>

@@ -11,6 +11,10 @@
     max-width: 270px;
     cursor: pointer;
     font-weight: bolder;
+    transition: transform 0.3s ease-in, box-shadow 0.3s ease;
+}
+.card:hover{
+    transform: scale(1.2);
 }
  .modalStyle {
   background: linear-gradient(135deg, #fffaf0, #716b5a); /* subtle gradient */
@@ -27,4 +31,7 @@
 }
 .modalStyle > button{
     margin: 1rem ;
+}
+.card > *{
+    color: #c15e08;
 }

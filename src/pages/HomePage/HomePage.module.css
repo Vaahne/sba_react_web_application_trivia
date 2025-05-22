@@ -31,4 +31,5 @@
 .sideContent >*{
   width: 15rem;
   height: 10rem;
+  border-radius: 2rem;
 }
