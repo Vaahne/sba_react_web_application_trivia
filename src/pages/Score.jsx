@@ -58,7 +58,7 @@ export default function Score(){
     }
 
     return <div className="scoreCard">
-        <h2>Score Board</h2>
+        <div className="scoreTitle" >Score Board</div>
         {scoreBoardDisplay()}
     </div>
 }
