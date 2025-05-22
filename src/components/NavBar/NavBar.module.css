@@ -21,3 +21,11 @@
     width: 7rem;
     border-radius: 4rem;
 }
+.navItems{
+    display: inline-block;
+    transition: transform .3s ease;
+}
+.navItems:hover{
+    transform: scale(1.26);
+    color:gold
+}
