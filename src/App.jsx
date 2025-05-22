@@ -13,6 +13,7 @@ import categoryContext from './context/categoryContext';
 import AboutUs from './pages/AboutUs';
 
 function App() {
+  // react modal setup with the id of root
   Modal.setAppElement('#root');
 
   const[categories,setCategories] = useState([]);
