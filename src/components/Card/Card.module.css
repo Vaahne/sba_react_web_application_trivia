@@ -3,6 +3,7 @@
     border: 1px solid #0e2d2d;
     background-color: #ccc7c0;
     margin: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
 }
 .modalStyle{
     background-color: antiquewhite;
@@ -10,8 +11,9 @@
     width: 30rem;
     margin: 18rem auto;
     top: 2rem;
-    border: 1rem solid gray;
+    border: .3rem solid gray;
     border-radius: .4rem;
+    text-align: center;
 }
 .modalStyle > button{
     margin: 1rem ;
