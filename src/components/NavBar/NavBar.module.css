@@ -5,7 +5,7 @@
     position: fixed;
     top: 0 ;
     right: 0; 
-    background-color: currentColor;
+    background: linear-gradient(45deg, #bfa8ba  );
 }
 .navBar > ul{
     display: flex;
@@ -19,4 +19,5 @@
 }
 .logo{
     width: 7rem;
+    border-radius: 4rem;
 }

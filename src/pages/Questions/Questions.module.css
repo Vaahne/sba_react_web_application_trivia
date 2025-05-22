@@ -15,6 +15,9 @@
 }
 .questionsDiv{
   margin: 4rem 7rem;
+  padding-left: 7rem;
+  /* max-height: 400px;
+  overflow-y: auto; */
 }
 .question{
   color: cornsilk;

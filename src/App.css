@@ -30,7 +30,7 @@ html,body{
   color: #222;
   text-align: center;
   max-width: 800px;
-  margin: 2rem auto;
+  margin: 7rem auto;
   /* border: 1px solid transparent;
   box-shadow: 1 2 3 rgba(200,11,211,0.2); */
 }
@@ -45,6 +45,7 @@ html,body{
 .aboutUs{
     font-family: cursive;
     font-size: large;
-    margin: 2rem auto;
+    margin: 7rem auto;
     width: 70%;
+    color:cornsilk;
 }
