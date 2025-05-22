@@ -27,8 +27,8 @@ This app fetches quiz questions in real-time from the Open Trivia Database API:
 + Multiple Choice Questions
 ## Tech Stack
 - React
-- React Router Dom
-- React Modal
-- css modules
+- React Router Dom (for navigating between the pages)
+- React Modal (modals for confirmation)
+- css modules (for styling for each component)
 - Open Trivia DB API
 - useState, useContext, useEffect , useNavigate , useLocation
