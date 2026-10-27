@@ -1,37 +1,99 @@
-.card{
-    padding: 1rem;
-    border: 1px solid #0e2d2d;
-    border-radius: 1rem;
-    background-color: #ccc7c0;
-    margin: 1rem;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    color:#333;
-    text-align: center;
-    /* width: 100%; */
-    max-width: 270px;
-    cursor: pointer;
-    font-weight: bolder;
-    transition: transform 0.3s ease-in, box-shadow 0.3s ease;
+.card {
+  padding: 1rem 0.75rem;
+  border: 1px solid #dce4f2;
+  border-top: 3px solid #3457d5;
+  border-radius: 0.8rem;
+  background-color: #ffffff;
+  margin: 0;
+  box-shadow: 0 4px 12px rgba(16, 26, 53, 0.08);
+  color: #18233e;
+  text-align: center;
+  width: 100%;
+  /* max-width: 230px; */
+  justify-self: center;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-weight: 700;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-.card:hover{
-    transform: scale(1.2);
-}
- .modalStyle {
-  background: linear-gradient(135deg, #fffaf0, #716b5a); /* subtle gradient */
-  width: 30rem;
-  padding: 2rem;
-  margin: 10% auto;
-  border-radius: 1rem;
-  border: .3rem solid rgb(55, 50, 50);
 
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+.card:hover {
+  transform: translateY(-3px);
+  border-top-color: #ffc857;
+  box-shadow: 0 7px 16px rgba(16, 26, 53, 0.13);
+}
+
+.card a {
+  display: block;
+  color: #18233e;
+  text-decoration: none;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* Quiz confirmation modal */
+.modalStyle {
+  background: #ffffff;
+  color: #18233e;
+  width: min(30rem, calc(100% - 3rem));
+  box-sizing: border-box;
+  padding: 2rem;
+  margin: 10vh auto;
+  border-radius: 1rem;
+  border: 1px solid #dce4f2;
+  border-top: 5px solid #ffc857;
+  box-shadow: 0 15px 40px rgba(16, 26, 53, 0.2);
   text-align: center;
   position: relative;
+}
 
+.modalStyle h2 {
+  color: #101a35;
+  font-size: 1.4rem;
+  line-height: 1.5;
+  margin: 0 0 1.5rem;
 }
-.modalStyle > button{
-    margin: 1rem ;
+
+.modalStyle button {
+  margin: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: #3457d5;
+  color: #ffffff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
 }
-.card > *{
-    color: #c15e08;
+
+.modalStyle button:hover {
+  background: #1d3163;
+}
+
+.modalStyle button:last-child {
+  background: #edf1fa;
+  color: #18233e;
+}
+
+.modalStyle button:last-child:hover {
+  background: #dce4f2;
+}
+
+@media (max-width: 600px) {
+  .card {
+    max-width: none;
+    margin: 0.5rem;
+  }
+
+  .modalStyle {
+    padding: 1.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .modalStyle button {
+    transition: none;
+  }
 }

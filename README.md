@@ -25,6 +25,19 @@ A fun and interactive quiz application built with React where users can test the
 This app fetches quiz questions in real-time from the Open Trivia Database API:
 + Wide range of categories (e.g., General Knowledge, Science, History)
 + Multiple Choice Questions
+## Future Enhancements
++ Timer Integration
+- Implement a real-time timer to track how long users take to complete each quiz, enhancing engagement and offering insights into performance under time constraints.
+
++ Categorized Quiz Grouping
+- Refactor categories into well-defined fields (e.g., Science, History, Pop Culture) to improve user navigation and allow more targeted quiz selection.
+
++ Quiz History Tracking
+- Add functionality to store and display users’ previous quizzes, including scores, time taken, and date attempted. This will allow users to review past performance and identify areas for improvement.
+
++  Score Analytics (optional)
+- Visualize user progress over time using charts or graphs.
+
 ## Tech Stack
 - React
 - React Router Dom (for navigating between the pages)

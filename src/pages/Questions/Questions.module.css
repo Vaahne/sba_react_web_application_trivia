@@ -1,36 +1,149 @@
-.modalStyle {
-  background: linear-gradient(135deg, #fffaf0, #716b5a); /* subtle gradient */
-  width: 30rem;
-  padding: 2rem;
-  margin: 10% auto;
-  border-radius: 1rem;
-  border: .3rem solid rgb(55, 50, 50);
 
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+.questionsDiv {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #ffffff;
+  border: 1px solid #dce3f3;
+  border-radius: 1.25rem;
+  box-shadow: 0 8px 28px rgb(16 26 53 / 8%);
+}
+
+.question {
+  color: #101a35;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  font-weight: 700;
+  margin: 1.5rem 0 0.75rem;
+  padding: 1rem;
+  background: #f2f5fc;
+  border-left: 4px solid #3457d5;
+  border-radius: 0.5rem;
+}
+
+.options {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.options li {
+  margin: 0;
+}
+
+.options label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  background: #ffffff;
+  color: #263452;
+  border: 1px solid #dce3f3;
+  border-radius: 0.65rem;
+  cursor: pointer;
+  transition: background 0.2s ease,
+              border-color 0.2s ease;
+}
+
+.options label:hover {
+  background: #edf1ff;
+  border-color: #3457d5;
+}
+
+.options input[type="radio"] {
+  accent-color: #3457d5;
+  width: 1.1rem;
+  height: 1.1rem;
+  flex-shrink: 0;
+}
+
+.questionsSubmit {
+  display: block;
+  margin: 2rem auto 0;
+  min-width: 180px;
+  padding: 0.9rem 1.5rem;
+  background: #3457d5;
+  color: #ffffff;
+  border: none;
+  border-radius: 0.7rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease,
+              transform 0.2s ease;
+}
+
+.questionsSubmit:hover {
+  background: #101a35;
+  transform: translateY(-2px);
+}
+
+/* Confirmation modal */
+.modalStyle {
+  background: #ffffff;
+  color: #101a35;
+  width: min(30rem, calc(100% - 3rem));
+  box-sizing: border-box;
+  padding: 2rem;
+  margin: 10vh auto;
+  border-radius: 1rem;
+  border: 2px solid #ffc857;
+  box-shadow: 0 15px 40px rgb(0 0 0 / 25%);
   text-align: center;
   position: relative;
+  outline: none;
 }
-.modalStyle > button{
-    margin: 1rem ;
+
+.modalStyle h2 {
+  color: #101a35;
 }
-.questionsDiv{
-  margin: 4rem 7rem;
-  padding-left: 7rem;
-  /* max-height: 400px;
-  overflow-y: auto; */
+
+.modalStyle button {
+  margin: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: #3457d5;
+  color: #ffffff;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  cursor: pointer;
 }
-.question{
-  color: cornsilk;
-  font-size: medium;
-  font-weight: bolder;
+
+.modalStyle button:hover {
+  background: #101a35;
 }
-.questionsSubmit{
-  margin: 1rem 13rem;
-  width: 8rem;
+
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgb(16 26 53 / 65%);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  overflow-y: auto;
+  z-index: 1000;
 }
-.options{
-    list-style-type: none;
-    margin: .1rem;
-    color: #fffefe;
-    padding: .2em;
+
+
+@media (max-width: 600px) {
+  .questionsDiv {
+    margin: 1rem auto;
+    padding: 1rem;
+  }
+
+  .question {
+    font-size: 1rem;
+    padding: 0.75rem;
+  }
+
+  .options label {
+    padding: 0.75rem;
+  }
+
+  .modalStyle {
+    padding: 1.25rem;
+  }
 }

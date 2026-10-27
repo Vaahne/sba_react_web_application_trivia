@@ -1,35 +1,89 @@
+
 import { useNavigate } from "react-router-dom";
-import styles from './HomePage.module.css';
+import styles from "./HomePage.module.css";
 
-export default function HomePage(){
-    const nav = useNavigate();
+export default function HomePage() {
+  const nav = useNavigate();
 
-    // navigates to questions page if random quiz is clicked or the category page if start quiz 
-    function handleClick(e){
-        if(e.target.name == 'random'){
-            console.log(e.target.name);
-            const random = Math.floor(Math.random() * 24) +9;
-            console.log(random);
-            nav(`/questions/${random}`);
-        }else
-            nav(`/category`);
+  function handleClick(type) {
+    if (type === "random") {
+      const random = Math.floor(Math.random() * 24) + 9;
+      nav(`/questions/${random}`);
+    } else {
+      nav("/category");
     }
+  }
 
-    // displays the landing page with gifs and buttons to start quiz or random quiz
-    return <div className={styles.homeContent}>
-        <div className={styles.sideContent}>
-            <img src="https://media.tenor.com/1dKzIzThtzgAAAAM/trivia-day-happy-trivia-day.gif" />
-            <img src="https://media.tenor.com/xyvcwiSy0V0AAAAM/trivia-trivia-time.gif"/>
-            <img src="https://media2.giphy.com/media/26FPqtXZkuciQPklO/200w.gif?cid=6c09b9522ct1ziqlu2qw85bzvtbbgsdirbp3xycf7m5d4z13&ep=v1_gifs_search&rid=200w.gif&ct=g"/>
+  return (
+    <main className={styles.homeContent}>
+      {/* Left side: Learning */}
+      <aside className={styles.sideContent}>
+        <div className={`${styles.decorCard} ${styles.leftCardOne}`}>
+          <span className={styles.decorLabel}>01 / EXPLORE</span>
+          <h3>Discover<br />New Topics.</h3>
+          <div className={styles.decorLine} />
+          <p>Explore interesting subjects and expand your knowledge.</p>
         </div>
+
+        <div className={`${styles.decorCard} ${styles.leftCardTwo}`}>
+          <span className={styles.decorLabel}>02 / LEARN</span>
+          <h3>Stay Curious.</h3>
+          <div className={styles.decorLine} />
+          <p>Every question is a chance to learn something new.</p>
+        </div>
+      </aside>
+
+      {/* Center: Main actions */}
+      <section className={styles.centerContent}>
+        <p className={styles.eyebrow}>THINK · PLAY · DISCOVER</p>
+
+        <h1>
+          Ready to Test
+          <span>Your Knowledge?</span>
+        </h1>
+
+        <p className={styles.description}>
+          Challenge yourself with fun trivia questions.
+          Choose a category or try a random quiz and see how much you know!
+        </p>
+
         <div className={styles.homeButtons}>
-            <button onClick={handleClick} name="start">Start Quiz</button>
-            <button onClick={handleClick} name="random">Random Quiz</button>
+          <button
+            className={styles.primaryButton}
+            onClick={() => handleClick("start")}
+          >
+            Start Quiz <span aria-hidden="true">→</span>
+          </button>
+
+          <button
+            className={styles.secondaryButton}
+            onClick={() => handleClick("random")}
+          >
+            Random Quiz <span aria-hidden="true">↗</span>
+          </button>
         </div>
-        <div className={styles.sideContent}>
-            <img src="https://media.tenor.com/1dKzIzThtzgAAAAM/trivia-day-happy-trivia-day.gif" />
-            <img src="https://media.tenor.com/xyvcwiSy0V0AAAAM/trivia-trivia-time.gif" />
-            <img src="https://media2.giphy.com/media/26FPqtXZkuciQPklO/200w.gif?cid=6c09b9522ct1ziqlu2qw85bzvtbbgsdirbp3xycf7m5d4z13&ep=v1_gifs_search&rid=200w.gif&ct=g"/>
+
+        <p className={styles.tagline}>
+          Every question brings a new challenge.
+        </p>
+      </section>
+
+      {/* Right side: Challenges */}
+      <aside className={styles.sideContent}>
+        <div className={`${styles.decorCard} ${styles.rightCardOne}`}>
+          <span className={styles.decorLabel}>03 / CHALLENGE</span>
+          <h3>Trust Your<br />Knowledge.</h3>
+          <div className={styles.decorLine} />
+          <p>Put your knowledge to the test, one answer at a time.</p>
         </div>
-    </div>  
+
+        <div className={`${styles.decorCard} ${styles.rightCardTwo}`}>
+          <span className={styles.decorLabel}>04 / ACHIEVE</span>
+          <h3>Make It Count.</h3>
+          <div className={styles.decorLine} />
+          <p>Keep playing, improve your score, and celebrate progress.</p>
+        </div>
+      </aside>
+    </main>
+  );
 }
